@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "ZenStock Video Resume",
+  "description": "Privately remembers video playback positions for ZenStockTrade lessons.",
+  "version": "0.2.2",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "ZenStock Video Resume",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://zenstocktrade.com/*",
+        "https://*.zenstocktrade.com/*",
+        "https://player.vimeo.com/*",
+        "https://*.vimeo.com/*",
+        "https://fast.wistia.net/*",
+        "https://*.wistia.com/*",
+        "https://*.wistia.net/*",
+        "https://*.prestoplayer.com/*",
+        "https://*.jwplayer.com/*",
+        "https://*.jwplatform.com/*",
+        "https://player.vdocipher.com/*",
+        "https://*.vdocipher.com/*",
+        "https://iframe.mediadelivery.net/*",
+        "https://*.mediadelivery.net/*",
+        "https://iframe.videodelivery.net/*",
+        "https://*.videodelivery.net/*",
+        "https://videos.sproutvideo.com/*",
+        "https://*.sproutvideo.com/*",
+        "https://*.youtube.com/*",
+        "https://*.youtube-nocookie.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true,
+      "run_at": "document_idle"
+    }
+  ]
+}
